@@ -1,0 +1,68 @@
+/*--------------------------------------------------------------
+# Custom Fonts
+--------------------------------------------------------------*/
+
+@font-face {
+	font-family: 'titling-gothic-bold';
+	src: url("../fonts/titling-gothic/Titling-Gothic-Bold.woff") format("woff");
+    font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'titling-gothic-medium';
+	src: url("../fonts/titling-gothic/Titling-Gothic-Medium.woff") format("woff");
+    font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'titling-gothic-regular';
+	src: url("../fonts/titling-gothic/Titling-Gothic-Regular.woff") format("woff");
+    font-weight: 300;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: 'arnhem-blond';
+	src: url("../fonts/arnhem/Arnhem-Blond.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: 'arnhem-bold';
+	src: url("../fonts/arnhem/Arnhem-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "gentona-light";
+	src: url("../fonts/gentona/Gentona-Light.woff") format("woff");
+	font-weight: 300;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "gentona-semibold";
+	src: url("../fonts/gentona/Gentona-SemiBold.woff") format("woff");
+	font-weight: 600;
+	font-style: normal;
+	font-display: fallback;
+}
+
+@font-face {
+	font-family: "gentona-bold";
+	src: url("../fonts/gentona/Gentona-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+}
