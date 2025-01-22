@@ -126,30 +126,3 @@ if ( ! function_exists( 'ksas_magazine__sticky_posts' ) ) :
 	add_filter( 'post_class', 'ksas_magazine__sticky_posts' );
 
 endif;
-
-/** Disable/Clean Inline Styles */
-function clean_post_content( $content ) {
-	// Remove inline styling.
-	$content = preg_replace( '/(<[span>]+) style=".*?"/i', '$1', $content );
-	$content = preg_replace( '/font-family\:.+?;/i', '', $content );
-	$content = preg_replace( '/color\:.+?;/i', '', $content );
-
-	// Remove font tag.
-	$content = preg_replace( '/<font[^>]+>/', '', $content );
-
-	// Remove empty tags.
-	$post_cleaners = array(
-		'<p></p>'             => '',
-		'<p> </p>'            => '',
-		'<p>&nbsp;</p>'       => '',
-		'<span></span>'       => '',
-		'<span> </span>'      => '',
-		'<span>&nbsp;</span>' => '',
-		'<font>'              => '',
-		'</font>'             => '',
-	);
-	$content       = strtr( $content, $post_cleaners );
-
-	return $content;
-}
-add_filter( 'the_content', 'clean_post_content' );
