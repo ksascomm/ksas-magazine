@@ -46,7 +46,7 @@ $volume_name = get_the_volume_name( $post );
 				sprintf(
 					wp_kses(
 						/* translators: %s: Name of current post. Only visible to screen readers */
-						__( 'Continue reading<span class="sr-only"> "%s"</span>', 'ksas-magazine' ),
+						__( 'Continue reading<span class="sr-only"> "%s"</span>', 'ksas-magazine-tailwind' ),
 						array(
 							'span' => array(
 								'class' => array(),

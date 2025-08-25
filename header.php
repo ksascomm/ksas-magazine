@@ -39,7 +39,7 @@
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-T9S2PC4"
 	height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
-<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'ksas-magazine' ); ?></a>
+<a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'ksas-magazine-tailwind' ); ?></a>
 <?php wp_body_open(); ?>
 	<header id="site-header" class="header-footer-group sm:justify-between shadow sm:items-baseline w-full bg-blue" role="banner">
 		<div class="header-titles-wrapper">
@@ -77,7 +77,7 @@
 						<span class="toggle-icon">
 							<?php twentytwenty_the_theme_svg( 'search' ); ?>
 						</span>
-						<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'ksas-magazine' ); ?></span>
+						<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'ksas-magazine-tailwind' ); ?></span>
 					</span>
 				</button><!-- .search-toggle -->
 				<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle" type="button">
@@ -85,7 +85,7 @@
 						<span class="toggle-icon">
 							<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
 						</span>
-						<span class="toggle-text"><?php _e( 'Menu', 'ksas-magazine' ); ?></span>
+						<span class="toggle-text"><?php _e( 'Menu', 'ksas-magazine-tailwind' ); ?></span>
 					</span>
 				</button><!-- .nav-toggle -->
 			</div><!-- .header-inner -->
@@ -116,7 +116,7 @@
 						<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false" type="button">
 							<span class="toggle-inner">
 							<?php twentytwenty_the_theme_svg( 'search' ); ?>
-								<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'ksas-magazine' ); ?></span>
+								<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'ksas-magazine-tailwind' ); ?></span>
 							</span>
 						</button><!-- .search-toggle -->
 

@@ -11,7 +11,8 @@ get_header();
 ?>
 
 <?php
-$currentissue = asmag_get_theme_option( 'input_example' );
+$currentissue       = asmag_get_theme_option( 'input_example' );
+$currentissue_clean = ucwords( str_replace( '-', ' ', $currentissue ) );
 
 $volume                                    = get_the_volume( $post );
 $parent                                    = get_queried_object_id();
@@ -92,7 +93,8 @@ $parent                                    = get_queried_object_id();
 			?>
 		<div class="content p-6 lg:p-12 lg:max-w-2xl w-full lg:absolute top-12 left-5 lg:bg-primary lg:bg-opacity-60">
 			<h1 class="lg:text-white font-gothicmedium !text-[64px]">
-				<span class="text-xl block uppercase tracking-wide">Cover Story:</span>
+				<span class="text-xl block uppercase tracking-wide">
+					<?php echo esc_html( $currentissue_clean ); ?> Cover Story:</span>
 				<?php the_title(); ?>
 			</h1>
 				<div class="lg:mt-2 lg:text-white text-lg md:text-xl tracking-tight">
@@ -124,7 +126,7 @@ endif;
 						$current_issue_link = get_field( 'current_issue', 'option' );
 						?>
 						<div>
-							<a class="button" href="<?php echo esc_url( $current_issue_link ); ?>">Explore This Issue&nbsp;<span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span></a>
+							<a class="button" href="<?php echo esc_url( $current_issue_link ); ?>">Explore <?php echo esc_html( $currentissue_clean ); ?> Issue&nbsp;<span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span></a>
 						</div>
 							<?php
 

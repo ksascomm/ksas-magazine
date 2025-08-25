@@ -1574,8 +1574,8 @@ ul.page-numbers li.active a {
   @apply bg-primary;
 }
 
-.has-text-align-center {
-  @apply text-left;
+.has-secondary-background-color {
+  background-color: #767676;
 }
 
 .has-heritage-blue-background-color *,

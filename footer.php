@@ -65,7 +65,7 @@
 					<?php
 					echo date_i18n(
 						/* translators: Copyright date format, see https://www.php.net/manual/datetime.format.php */
-						_x( 'Y', 'copyright date format', 'ksas-magazine' )
+						_x( 'Y', 'copyright date format', 'ksas-magazine-tailwind' )
 					);
 					?>
 					Johns Hopkins University, <br>Zanvyl Krieger School of Arts & Sciences,

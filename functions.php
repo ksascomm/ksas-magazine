@@ -25,9 +25,9 @@ if ( ! function_exists( 'ksas_magazine_setup' ) ) :
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
 		 * If you're building a theme based on KSAS_Magazine, use a find and replace
-		 * to change 'ksas-magazine' to the name of your theme in all the template files.
+		 * to change 'ksas-magazine-tailwind' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'ksas-magazine', get_template_directory() . '/languages' );
+		// load_theme_textdomain( 'ksas-magazine-tailwind', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -50,7 +50,7 @@ if ( ! function_exists( 'ksas_magazine_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus(
 			array(
-				'main-nav' => esc_html__( 'The Main Menu', 'ksas-magazine' ),
+				'main-nav' => esc_html__( 'The Main Menu', 'ksas-magazine-tailwind' ),
 			)
 		);
 
@@ -172,7 +172,7 @@ if ( function_exists( 'acf_add_options_page' ) ) {
  * Include a skip to content link at the top of the page so that users can bypass the menu.
  */
 function twentytwenty_skip_link() {
-	echo '<div role="navigation" aria-label="Skip to main content"><a class="skip-link sr-only" href="#site-content">' . __( 'Skip to the content', 'ksas-magazine' ) . '</a></div>';
+	echo '<div role="navigation" aria-label="Skip to main content"><a class="sr-only skip-link" href="#site-content">' . __( 'Skip to the content', 'ksas-magazine-tailwind' ) . '</a></div>';
 }
 
 add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
@@ -290,5 +290,4 @@ function internal_page_submenu( $args = array() ) {
 	} else {
 		return implode( '', $output );
 	}
-
 }

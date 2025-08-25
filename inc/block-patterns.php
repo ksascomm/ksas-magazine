@@ -16,8 +16,8 @@
 if ( function_exists( 'register_block_pattern_category' ) ) {
 
 	register_block_pattern_category(
-		'ksas-magazine',
-		array( 'label' => esc_html__( 'KSAS Magazine', 'ksas-magazine' ) )
+		'ksas-magazine-tailwind',
+		array( 'label' => esc_html__( 'KSAS Magazine', 'ksas-magazine-tailwind' ) )
 	);
 }
 
@@ -29,8 +29,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/simple-hero',
 		array(
-			'title'         => esc_html__( 'Simple Hero', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Simple Hero', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => '
 			<!-- wp:columns {"verticalAlignment":"center"} -->
@@ -60,14 +60,14 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/staff-listing',
 		array(
-			'title'         => esc_html__( 'Staff Listing Vertical', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Staff Listing Vertical', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => '
 			<!-- wp:group {"className":"staff-listing"} --><div class="wp-block-group staff-listing"><div class="wp-block-group__inner-container"><!-- wp:columns -->
 			<div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 			<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"sizeSlug":"medium","linkDestination":"none"} -->
-			<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>
+			<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>
 			<!-- /wp:image --></div>
 			<!-- /wp:column -->
 			<!-- wp:column {"width":"66.66%"} -->
@@ -87,7 +87,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<div class="wp-block-group staff-listing"><div class="wp-block-group__inner-container"><!-- wp:columns -->
 			<div class="wp-block-columns"><!-- wp:column {"width":"33.33%"} -->
 			<div class="wp-block-column" style="flex-basis:33.33%"><!-- wp:image {"sizeSlug":"medium","linkDestination":"none"} -->
-			<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>
+			<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>
 			<!-- /wp:image --></div>
 			<!-- /wp:column -->
 			<!-- wp:column {"width":"66.66%"} -->
@@ -108,8 +108,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/staff-listing-horizontal',
 		array(
-			'title'         => esc_html__( 'Staff Listing Horizontal', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Staff Listing Horizontal', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => '<!-- wp:columns -->
 			<div class="wp-block-columns staff-listing-horizontal"><!-- wp:column -->
@@ -128,7 +128,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<div class="wp-block-column"><!-- wp:columns -->
 			<div class="wp-block-columns"><!-- wp:column -->
 			<div class="wp-block-column staff-listing-single"><!-- wp:image {"id":54,"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":4} -->
@@ -142,7 +142,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column -->
 			<div class="wp-block-column staff-listing-single"><!-- wp:image {"id":54,"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":4} -->
@@ -160,7 +160,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<div class="wp-block-column"><!-- wp:columns -->
 			<div class="wp-block-columns"><!-- wp:column -->
 			<div class="wp-block-column staff-listing-single"><!-- wp:image {"id":54,"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":4} -->
@@ -174,7 +174,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column -->
 			<div class="wp-block-column staff-listing-single"><!-- wp:image {"id":54,"sizeSlug":"large","linkDestination":"none"} -->
-			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>
+			<figure class="wp-block-image size-large"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/johns_hopkins.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>
 			<!-- /wp:image -->
 
 			<!-- wp:heading {"level":4} -->
@@ -195,8 +195,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/featured-content',
 		array(
-			'title'         => esc_html__( 'Featured Content', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Featured Content', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => implode(
 				'',
@@ -204,30 +204,30 @@ if ( function_exists( 'register_block_pattern' ) ) {
 					'<!-- wp:columns {"align":"wide"} -->',
 					'<div class="wp-block-columns alignwide"><!-- wp:column -->',
 					'<div class="wp-block-column"><!-- wp:image {"sizeSlug":"full"} -->',
-					'<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/campus1.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>',
+					'<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/campus1.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>',
 					'<!-- /wp:image -->',
 					'<!-- wp:heading -->',
-					'<h2>' . esc_html__( 'Works and Days', 'ksas-magazine' ) . '</h2>',
+					'<h2>' . esc_html__( 'Works and Days', 'ksas-magazine-tailwind' ) . '</h2>',
 					'<!-- /wp:heading -->',
 					'<!-- wp:paragraph {"fontSize":"larger"} -->',
-					'<p>' . esc_html__( 'August 1 — December 1', 'ksas-magazine' ) . '</p>',
+					'<p>' . esc_html__( 'August 1 — December 1', 'ksas-magazine-tailwind' ) . '</p>',
 					'<!-- /wp:paragraph -->',
 					'<!-- wp:button {"align":"left","className":"is-style-fill"} -->',
-					'<div class="wp-block-button alignleft is-style-fill"><a class="wp-block-button__link" href="#">' . esc_html__( 'Read More', 'ksas-magazine' ) . '</a></div>',
+					'<div class="wp-block-button alignleft is-style-fill"><a class="wp-block-button__link" href="#">' . esc_html__( 'Read More', 'ksas-magazine-tailwind' ) . '</a></div>',
 					'<!-- /wp:button --></div>',
 					'<!-- /wp:column -->',
 					'<!-- wp:column -->',
 					'<div class="wp-block-column"><!-- wp:image {sizeSlug":"full"} -->',
-					'<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/campus2.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine' ) . '"/></figure>',
+					'<figure class="wp-block-image size-full"><img src="' . esc_url( get_template_directory_uri() ) . '/resources/images/campus2.jpg" alt="' . esc_attr__( 'Abstract Rectangles', 'ksas-magazine-tailwind' ) . '"/></figure>',
 					'<!-- /wp:image -->',
 					'<!-- wp:heading -->',
-					'<h2>' . esc_html__( 'The Life I Deserve', 'ksas-magazine' ) . '</h2>',
+					'<h2>' . esc_html__( 'The Life I Deserve', 'ksas-magazine-tailwind' ) . '</h2>',
 					'<!-- /wp:heading -->',
 					'<!-- wp:paragraph {"fontSize":"larger"} -->',
-					'<p>' . esc_html__( 'August 1 — December 1', 'ksas-magazine' ) . '</p>',
+					'<p>' . esc_html__( 'August 1 — December 1', 'ksas-magazine-tailwind' ) . '</p>',
 					'<!-- /wp:paragraph -->',
 					'<!-- wp:button {"align":"left","className":"is-style-fill"} -->',
-					'<div class="wp-block-button alignleft is-style-fill"><a class="wp-block-button__link" href="#">' . esc_html__( 'Read More', 'ksas-magazine' ) . '</a></div>',
+					'<div class="wp-block-button alignleft is-style-fill"><a class="wp-block-button__link" href="#">' . esc_html__( 'Read More', 'ksas-magazine-tailwind' ) . '</a></div>',
 					'<!-- /wp:button --></div>',
 					'<!-- /wp:column --></div>',
 					'<!-- /wp:columns -->',
@@ -240,17 +240,17 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/introduction',
 		array(
-			'title'         => esc_html__( 'Introduction', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Introduction', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => implode(
 				'',
 				array(
 					'<!-- wp:heading {"align":"center"} -->',
-					'<h2 class="has-text-align-center">' . esc_html__( 'The Premier Destination for Modern Art in Sweden', 'ksas-magazine' ) . '</h2>',
+					'<h2 class="has-text-align-center">' . esc_html__( 'The Premier Destination for Modern Art in Sweden', 'ksas-magazine-tailwind' ) . '</h2>',
 					'<!-- /wp:heading -->',
 					'<!-- wp:paragraph {"dropCap":true} -->',
-					'<p class="has-drop-cap">' . esc_html__( 'With seven floors of striking architecture, UMoMA shows exhibitions of international contemporary art, sometimes along with art historical retrospectives. Existential, political, and philosophical issues are intrinsic to our program. As visitor, you are invited to guided tours artist talks, lectures, film screenings, and other events with free admission.', 'ksas-magazine' ) . '</p>',
+					'<p class="has-drop-cap">' . esc_html__( 'With seven floors of striking architecture, UMoMA shows exhibitions of international contemporary art, sometimes along with art historical retrospectives. Existential, political, and philosophical issues are intrinsic to our program. As visitor, you are invited to guided tours artist talks, lectures, film screenings, and other events with free admission.', 'ksas-magazine-tailwind' ) . '</p>',
 					'<!-- /wp:paragraph -->',
 				)
 			),
@@ -261,8 +261,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/three-column-feature',
 		array(
-			'title'         => esc_html__( 'Thee Column Feature', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Thee Column Feature', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => '<!-- wp:columns -->
 			<div class="wp-block-columns three-column-feature"><!-- wp:column {"width":"66.66%"} -->
@@ -316,8 +316,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksas-magazine/four-column-feature',
 		array(
-			'title'         => esc_html__( 'Four Column Features', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Four Column Features', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => '
 			<!-- wp:group {"align":"wide","className":"four-column-feature"} -->
@@ -440,8 +440,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/call-to-action',
 		array(
-			'title'         => esc_html__( 'Call to Action', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Call to Action', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => implode(
 				'',
@@ -449,13 +449,13 @@ if ( function_exists( 'register_block_pattern' ) ) {
 					'<!-- wp:group {"align":"wide","style":{"color":{"background":"#bfccd9"}}} -->',
 					'<div class="wp-block-group alignwide has-background" style="background-color:#bfccd9"><div class="wp-block-group__inner-container"><!-- wp:group -->',
 					'<div class="wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:heading {"align":"center"} -->',
-					'<h2 class="has-text-align-center">' . esc_html__( 'Support the Museum and Get Exclusive Offers', 'ksas-magazine' ) . '</h2>',
+					'<h2 class="has-text-align-center">' . esc_html__( 'Support the Museum and Get Exclusive Offers', 'ksas-magazine-tailwind' ) . '</h2>',
 					'<!-- /wp:heading -->',
 					'<!-- wp:paragraph {"align":"center"} -->',
-					'<p class="has-text-align-center">' . esc_html__( 'Members get access to exclusive exhibits and sales. Our memberships cost $99.99 and are billed annually.', 'ksas-magazine' ) . '</p>',
+					'<p class="has-text-align-center">' . esc_html__( 'Members get access to exclusive exhibits and sales. Our memberships cost $99.99 and are billed annually.', 'ksas-magazine-tailwind' ) . '</p>',
 					'<!-- /wp:paragraph -->',
 					'<!-- wp:button {"align":"center","className":"is-style-fill"} -->',
-					'<div class="wp-block-button aligncenter is-style-fill"><a class="wp-block-button__link" href="#">' . esc_html__( 'Become a Member', 'ksas-magazine' ) . '</a></div>',
+					'<div class="wp-block-button aligncenter is-style-fill"><a class="wp-block-button__link" href="#">' . esc_html__( 'Become a Member', 'ksas-magazine-tailwind' ) . '</a></div>',
 					'<!-- /wp:button --></div></div>',
 					'<!-- /wp:group --></div></div>',
 					'<!-- /wp:group -->',
@@ -468,8 +468,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/double-call-to-action',
 		array(
-			'title'         => esc_html__( 'Double Call to Action', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Double Call to Action', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => implode(
 				'',
@@ -478,14 +478,14 @@ if ( function_exists( 'register_block_pattern' ) ) {
 					'<div class="wp-block-columns alignwide calls-to-action"><!-- wp:column -->',
 					'<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#fefefe"}}} -->',
 					'<div class="wp-block-group has-background left-call-to-action has-white-background-color" style="background-color:#fefefe"><div class="wp-block-group__inner-container"><!-- wp:heading {"align":"center"} -->',
-					'<h2 class="has-text-align-center">' . esc_html__( 'The Museum', 'ksas-magazine' ) . '</h2>',
+					'<h2 class="has-text-align-center">' . esc_html__( 'The Museum', 'ksas-magazine-tailwind' ) . '</h2>',
 					'<!-- /wp:heading -->',
 					'<!-- wp:paragraph {"align":"center"} -->',
-					'<p class="has-text-align-center">' . esc_html__( 'Award-winning exhibitions featuring internationally-renowned artists.', 'ksas-magazine' ) . '</p>',
+					'<p class="has-text-align-center">' . esc_html__( 'Award-winning exhibitions featuring internationally-renowned artists.', 'ksas-magazine-tailwind' ) . '</p>',
 					'<!-- /wp:paragraph -->',
 					'<!-- wp:buttons {"align":"center"} -->',
 					'<div class="wp-block-buttons aligncenter"><!-- wp:button {"className":"is-style-fill"} -->',
-					'<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">' . esc_html__( 'Read More', 'ksas-magazine' ) . '</a></div>',
+					'<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">' . esc_html__( 'Read More', 'ksas-magazine-tailwind' ) . '</a></div>',
 					'<!-- /wp:button --></div>',
 					'<!-- /wp:buttons --></div></div>',
 					'<!-- /wp:group --></div>',
@@ -493,14 +493,14 @@ if ( function_exists( 'register_block_pattern' ) ) {
 					'<!-- wp:column -->',
 					'<div class="wp-block-column"><!-- wp:group {"style":{"color":{"background":"#fefefe"}}} -->',
 					'<div class="wp-block-group has-background right-call-to-action has-white-background-color" style="background-color:#fefefe"><div class="wp-block-group__inner-container"><!-- wp:heading {"align":"center"} -->',
-					'<h2 class="has-text-align-center">' . esc_html__( 'The Store', 'ksas-magazine' ) . '</h2>',
+					'<h2 class="has-text-align-center">' . esc_html__( 'The Store', 'ksas-magazine-tailwind' ) . '</h2>',
 					'<!-- /wp:heading -->',
 					'<!-- wp:paragraph {"align":"center"} -->',
-					'<p class="has-text-align-center">' . esc_html__( 'An awe-inspiring collection of books, prints, and gifts from our exhibitions.', 'ksas-magazine' ) . '</p>',
+					'<p class="has-text-align-center">' . esc_html__( 'An awe-inspiring collection of books, prints, and gifts from our exhibitions.', 'ksas-magazine-tailwind' ) . '</p>',
 					'<!-- /wp:paragraph -->',
 					'<!-- wp:buttons {"align":"center"} -->',
 					'<div class="wp-block-buttons aligncenter"><!-- wp:button {"className":"is-style-fill"} -->',
-					'<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">' . esc_html__( 'Shop Now', 'ksas-magazine' ) . '</a></div>',
+					'<div class="wp-block-button is-style-fill"><a class="wp-block-button__link">' . esc_html__( 'Shop Now', 'ksas-magazine-tailwind' ) . '</a></div>',
 					'<!-- /wp:button --></div>',
 					'<!-- /wp:buttons --></div></div>',
 					'<!-- /wp:group --></div>',
@@ -515,8 +515,8 @@ if ( function_exists( 'register_block_pattern' ) ) {
 	register_block_pattern(
 		'ksasmagazine/horizontal-cta',
 		array(
-			'title'         => esc_html__( 'Horizontal Call to Action', 'ksas-magazine' ),
-			'categories'    => array( 'ksas-magazine' ),
+			'title'         => esc_html__( 'Horizontal Call to Action', 'ksas-magazine-tailwind' ),
+			'categories'    => array( 'ksas-magazine-tailwind' ),
 			'viewportWidth' => 1400,
 			'content'       => '
 			<!-- wp:group {"align":"full","style":{"color":{"background":"#f8f8f8"}}} -->
