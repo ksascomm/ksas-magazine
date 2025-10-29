@@ -33,10 +33,10 @@ if ( $tags ) :
 		?>
 			<?php
 			if ( $related_posts_query->have_posts() ) : ?>	
-<div class="related-posts-container alignfull bg-grey-cool bg-opacity-50">
+<div class="bg-opacity-50 related-posts-container alignfull bg-grey-cool">
 	<div class="container mx-auto">
-	<h2 class="py-4 text-3xl">Related <?php echo $catname; ?> Stories</h3>
-	<div class="grid grid-cols-2 lg:grid-cols-4 gap-8">
+	<h2 class="py-4 text-3xl font-bold font-heavy">Related <?php echo $catname; ?> Stories</h3>
+	<div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
 				<?php while ( $related_posts_query->have_posts() ) :
 					$related_posts_query->the_post();
 					$issues = get_the_terms( $post->ID, 'volume' );
@@ -49,7 +49,7 @@ if ( $tags ) :
 					endif;
 					?>
 			<div>
-				<div class="font-semi text-base tracking-wider flex justify-end uppercase">
+				<div class="flex justify-end text-base font-bold tracking-wider uppercase font-heavy">
 					<span><?php echo $issue->name; ?></span>
 				</div>
 				<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
@@ -57,12 +57,18 @@ if ( $tags ) :
 						<?php the_post_thumbnail( 'related-posts', array( 'class' => 'h-60 w-full object-cover object-top' ) ); ?>
 					</div>
 				<?php endif; ?>
-				<h3 class="font-semi text-xl tracking-wide"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
-				<?php
-				$content         = get_the_excerpt();
-				$trimmed_content = wp_trim_words( $content, 15, '...' );
-				?>
-				<p class="font-sans"><?php echo esc_html( $trimmed_content ); ?></p>
+				<h3 class="my-2 text-xl font-bold font-heavy">
+					<a href="<?php the_permalink(); ?>">
+						<?php the_title(); ?>
+					</a>
+				</h3>
+				<p class="my-2 font-serif">
+					<?php
+					$content         = get_the_excerpt();
+					$trimmed_content = wp_trim_words( $content, 15, '...' );
+					echo esc_html( $trimmed_content );
+					?>
+				</p>
 			</div>
 		<?php endwhile;?>
 	</div>

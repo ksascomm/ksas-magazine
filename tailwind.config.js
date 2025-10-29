@@ -59,7 +59,7 @@ module.exports = {
     },
     fontFamily: {
       sans: [
-        "arnhem-blond",
+        "worksans-medium",
         "system-ui",
         "BlinkMacSystemFont",
         "-apple-system",
@@ -67,14 +67,14 @@ module.exports = {
         "sans-serif",
       ],
       sansBold: [
-        "arnhem-bold",
+        "worksans-bold",
         "system-ui",
         "BlinkMacSystemFont",
         "-apple-system",
         "Segoe UI",
         "sans-serif",
       ],
-      serif: ["titling-gothic-bold", "Georgia", "serif"],
+      serif: ["source-serif-medium", "Georgia", "serif"],
       mono: [
         "Menlo",
         "Monaco",
@@ -84,7 +84,7 @@ module.exports = {
         "monospace",
       ],
       heavy: [
-        "titling-gothic-bold",
+        "Oswald-bold",
         "system-ui",
         "BlinkMacSystemFont",
         "-apple-system",
@@ -92,37 +92,14 @@ module.exports = {
         "sans-serif",
       ],
       semi: [
-        "titling-gothic-medium",
+        "Oswald-bold",
         "system-ui",
         "BlinkMacSystemFont",
         "-apple-system",
         "Segoe UI",
         "sans-serif",
       ],
-      gothicmedium: [
-        "titling-gothic-medium",
-        "system-ui",
-        "BlinkMacSystemFont",
-        "-apple-system",
-        "Segoe UI",
-        "sans-serif",
-      ],
-      gentonalight: [
-        "gentona-light",
-        "system-ui",
-        "BlinkMacSystemFont",
-        "-apple-system",
-        "Segoe UI",
-        "sans-serif",
-      ],
-      gentonabold: [
-        "gentona-bold",
-        "system-ui",
-        "BlinkMacSystemFont",
-        "-apple-system",
-        "Segoe UI",
-        "sans-serif",
-      ],
+      serifBold: ["source-serif-bold", "Georgia", "serif"],
     },
     extend: {
       typography: {
@@ -133,16 +110,17 @@ module.exports = {
               lineHeight: "1.6",
               fontSize: "1.25rem",
               maxWidth: "100ch",
-              '--tw-prose-body': "#31261D",
-              '--tw-prose-bullets': "#31261D",
-              '--tw-prose-headings': "#31261D",
-              '--tw-prose-links': "#002d72",
-              '--tw-prose-bold': "#31261D",
-              '--tw-prose-code': "#31261D",
-              '--tw-prose-pre-code': "#31261D",
-              '--tw-prose-pre-bg': "#f8f8f8",
-              '--tw-prose-quotes': "#31261D",
-              '--tw-prose-counters': "31261D",
+              letterSpacing: "-0.025em",
+              "--tw-prose-body": "#31261D",
+              "--tw-prose-bullets": "#31261D",
+              "--tw-prose-headings": "#31261D",
+              "--tw-prose-links": "#002d72",
+              "--tw-prose-bold": "#31261D",
+              "--tw-prose-code": "#31261D",
+              "--tw-prose-pre-code": "#31261D",
+              "--tw-prose-pre-bg": "#f8f8f8",
+              "--tw-prose-quotes": "#31261D",
+              "--tw-prose-counters": "31261D",
               "ul > li::before": {
                 backgroundColor: "#31261D",
               },
@@ -160,48 +138,56 @@ module.exports = {
               h1: {
                 marginBottom: "0rem",
                 fontSize: "2.25rem",
-                fontWeight: "500",
+                fontWeight: "700",
+                fontFamily:
+                  "oswald-bold,system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
               },
               h2: {
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
                 maxWidth: "90ch",
                 fontSize: "2rem",
-                fontWeight: "600",
+                fontFamily:
+                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontWeight: 700,
               },
               h3: {
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
                 fontSize: "1.6rem",
-                fontWeight: "600",
+                fontFamily:
+                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontWeight: 700,
               },
               h4: {
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
                 fontSize: "1.25rem",
-                fontWeight: "600",
+                fontFamily:
+                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontWeight: 700,
               },
-              h5 : {
-                fontWeight: "600",
+              h5: {
+                fontFamily:
+                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontWeight: 700,
               },
               p: {
                 marginTop: "1rem",
                 marginBottom: "1rem",
-                fontWeight: 300,
+                fontWeight: 500,
               },
               li: {
                 maxWidth: "90ch",
                 marginTop: "0rem",
                 marginBottom: ".25rem",
-                fontWeight: 300,
+                fontWeight: 500,
               },
               a: {
                 textDecoration: "none",
                 transition: "none",
-                fontWeight: 300,
               },
               strong: {
-                fontFamily: "'arnhem-bold', Georgia, serif",
                 fontWeight: 700,
               },
               table: {
@@ -254,7 +240,7 @@ module.exports = {
               marginBottom: "0rem",
             },
             li: {
-              lineHeight:"1.6",
+              lineHeight: "1.6",
             },
           },
         },
@@ -265,5 +251,5 @@ module.exports = {
     require("@tailwindcss/typography")({
       modifiers: ["lg"],
     }),
-  ]
+  ],
 };

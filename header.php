@@ -17,6 +17,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="date" content="<?php the_modified_date(); ?>" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
+	<meta name='robots' content='noindex,nofollow' />
 	<?php wp_head(); ?>
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -41,30 +42,30 @@
 <!-- End Google Tag Manager (noscript) -->
 <a class="skip-link screen-reader-text" href="#site-content"><?php esc_html_e( 'Skip to content', 'ksas-magazine-tailwind' ); ?></a>
 <?php wp_body_open(); ?>
-	<header id="site-header" class="header-footer-group sm:justify-between shadow sm:items-baseline w-full bg-blue" role="banner">
+	<header id="site-header" class="w-full shadow header-footer-group sm:justify-between sm:items-baseline bg-blue" role="banner">
 		<div class="header-titles-wrapper">
 			<div class="header-inner section-inner">
-				<div class="header-titles grid grid-cols-1 lg:grid-cols-3 gap-x-12">
-					<div class="h-auto shield mx-auto -mt-4">
+				<div class="grid grid-cols-1 header-titles lg:grid-cols-3 gap-x-12">
+					<div class="h-auto mx-auto -mt-4 shield">
 					<?php if ( get_field( 'shield', 'option' ) == 'jhu' ) : ?>
 						<a href="https://www.jhu.edu/" title="Johns Hopkins University">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/university.shield.svg" class="h-auto w-full p-2" alt="JHU Shield" role="img">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/university.shield.svg" class="w-full h-auto p-2" alt="JHU Shield" role="img">
 						</a>
 					<?php else : ?>
 						<a href="https://krieger.jhu.edu" rel="home">
-							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/krieger.shield.svg" class="h-auto w-full p-2" alt="KSAS Shield" role="img">
+							<img src="<?php echo esc_url( get_template_directory_uri() ); ?>/dist/images/krieger.shield.svg" class="w-full h-auto p-2" alt="KSAS Shield" role="img">
 						</a>	
 					<?php endif; ?>
 					</div>
 					<div class="lg:col-span-2">
-						<h1 class="site-title text-2xl sm:text-xl md:text-2xl lg:text-4xl mt-4 lg:mt-0 mb-12 md:mb-0">
-						<a class=" text-white" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+						<h1 class="mt-4 mb-12 text-2xl site-title sm:text-xl md:text-2xl lg:text-4xl lg:mt-0 md:mb-0">
+						<a class="text-white " href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
 							<?php
 								$ksas_magazine_description = get_bloginfo( 'description', 'display' );
 							if (
 								$ksas_magazine_description || is_customize_preview() ) :
 								$ksas_magazine_description = get_bloginfo( 'description', 'display' );
-								echo '<span class="block font-normal pt-1 text-xl">' . $ksas_magazine_description . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+								echo '<span class="block pt-1 text-xl font-normal">' . $ksas_magazine_description . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
 								?>
 								<?php endif; ?>
 							<?php bloginfo( 'name' ); ?>
@@ -90,8 +91,8 @@
 				</button><!-- .nav-toggle -->
 			</div><!-- .header-inner -->
 		</div><!-- .header-titles-wrapper -->
-		<div class="header-navigation-wrapper bg-white">
-			<div class="header-inner section-inner flex justify-between">
+		<div class="bg-white header-navigation-wrapper">
+			<div class="flex justify-between header-inner section-inner">
 				<div class="menu-container">
 					<button class="menu-button" aria-controls="site-header-menu" type="button"><span class="screen-reader-text"><?php esc_html_e( 'Menu', 'rwc' ); ?></span></button>
 					<div id="site-header-menu" class="site-header-menu text-primary">

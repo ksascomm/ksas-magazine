@@ -4,3 +4,12 @@
 
 @import "wordpress.css";
 @import "fonts.css";
+
+@layer base {
+  html {
+    font-family: "source-serif-medium", "Georgia", "serif";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+	font-weight: 500;
+  }
+}

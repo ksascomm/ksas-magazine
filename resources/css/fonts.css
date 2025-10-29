@@ -3,6 +3,84 @@
 --------------------------------------------------------------*/
 
 @font-face {
+	font-family: 'oswald-regular';
+	src: url("../fonts/oswald/Oswald-Regular.woff") format("woff");
+    font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: 'oswald-medium';
+	src: url("../fonts/oswald/Oswald-Medium.woff") format("woff");
+    font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'oswald-bold';
+	src: url("../fonts/oswald/Oswald-Bold.woff") format("woff");
+    font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'source-serif-regular';
+	src: url("../fonts/source_serif/SourceSerif4-Regular.woff") format("woff");
+    font-weight: 400;
+	font-style: normal;
+	font-display: swap;
+}
+
+
+@font-face {
+	font-family: 'source-serif-medium';
+	src: url("../fonts/source_serif/SourceSerif4-Medium.woff") format("woff");
+    font-weight: 500;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: 'source-serif-bold';
+	src: url("../fonts/source_serif/SourceSerif4-Bold.woff") format("woff");
+    font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+}
+
+@font-face {
+	font-family: "robotoslab-bold";
+	src: url("../fonts/roboto_slab/RobotoSlab-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: swap;
+	font-optical-sizing: auto;
+}
+
+@font-face {
+	font-family: "worksans-regular";
+	src: url("../fonts/work_sans/WorkSans-Regular.woff") format("woff");
+	font-weight: 400;
+	font-style: normal;
+	font-display: fallback;
+	font-optical-sizing: auto;
+}
+
+@font-face {
+	font-family: "worksans-bold";
+	src: url("../fonts/work_sans/WorkSans-Bold.woff") format("woff");
+	font-weight: 700;
+	font-style: normal;
+	font-display: fallback;
+	font-optical-sizing: auto;
+}
+
+
+@font-face {
 	font-family: 'titling-gothic-bold';
 	src: url("../fonts/titling-gothic/Titling-Gothic-Bold.woff") format("woff");
     font-weight: 700;

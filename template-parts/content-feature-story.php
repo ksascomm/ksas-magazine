@@ -19,7 +19,7 @@ $volume_name = get_the_volume_name( $post );
 <?php
 if ( has_post_thumbnail() ) :
 	?>
-	<div class="alignfull featured-image-area front-featured-image-area relative mb-0" role="banner">
+	<div class="relative mb-0 alignfull featured-image-area front-featured-image-area" role="banner">
 		<div class="flex-col lg:flex bg-white lg:h-[425px]">
 			<?php
 				the_post_thumbnail(
@@ -30,12 +30,12 @@ if ( has_post_thumbnail() ) :
 					)
 				);
 			?>
-			<div class="content p-4 pt-8 md:p-12 pb-12 lg:max-w-2xl w-full lg:absolute top-12 left-5 lg:bg-primary lg:bg-opacity-60">
+			<div class="w-full p-4 pt-8 pb-12 content md:p-12 lg:max-w-2xl lg:absolute top-12 left-5 lg:bg-primary lg:bg-opacity-60">
 				<h1 class="lg:text-white">
 					<?php the_title(); ?>
 				</h1>
 				<?php if ( function_exists( 'get_field' ) && get_field( 'ecpt_tagline' ) ) : ?> 
-					<div class="lg:mt-2 lg:text-white text-lg md:text-xl tracking-tight">
+					<div class="text-lg tracking-tighter lg:mt-2 lg:text-white md:text-xl">
 						<p class="leading-normal"><?php the_field( 'ecpt_tagline' ); ?></p>
 					</div>
 				<?php endif; ?>
@@ -45,8 +45,8 @@ if ( has_post_thumbnail() ) :
 	<?php else : ?>
 	<!-- Put conditional here to print page title when no featured image -->
 	<div class="alignfull !mt-0" role="banner">
-		<div class="flex bg-white lg:bg-grey-cool lg:bg-opacity-50 front-featured-image-area h-20 lg:h-40">
-			<div class="flex lg:items-center px-6 xl:ml-32">
+		<div class="flex h-20 bg-white lg:bg-grey-cool lg:bg-opacity-50 front-featured-image-area lg:h-40">
+			<div class="flex px-6 lg:items-center xl:ml-32">
 				<h1 class="entry-title">
 					<?php the_title(); ?>
 				</h1>
@@ -54,7 +54,7 @@ if ( has_post_thumbnail() ) :
 		</div>
 	</div>
 	<?php endif; ?>
-	<div class="wayfinding md:mb-8 ml-4 xl:ml-0">
+	<div class="ml-4 wayfinding md:mb-8 xl:ml-0">
 		<?php
 		if ( function_exists( 'bcn_display' ) ) :
 			?>

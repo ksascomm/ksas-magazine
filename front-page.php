@@ -73,15 +73,15 @@ $parent                                    = get_queried_object_id();
 		)
 	);
 	?>
-	<main id="site-content" class="site-main front prose lg:prose-lg">
+	<main id="site-content" class="prose site-main front lg:prose-lg">
 
 	<?php
 	if ( $asmag_homepage_coverstory_query->have_posts() ) :
 		while ( $asmag_homepage_coverstory_query->have_posts() ) :
 			$asmag_homepage_coverstory_query->the_post();
 			?>
-<div class="alignfull featured-image-area front-featured-image-area relative mb-0" role="banner">
-	<div class="flex-col lg:flex bg-white">
+<div class="relative mb-0 alignfull featured-image-area front-featured-image-area" role="banner">
+	<div class="flex-col bg-white lg:flex">
 			<?php
 			the_post_thumbnail(
 				'full',
@@ -91,13 +91,13 @@ $parent                                    = get_queried_object_id();
 				)
 			);
 			?>
-		<div class="content p-6 lg:p-12 lg:max-w-2xl w-full lg:absolute top-12 left-5 lg:bg-primary lg:bg-opacity-60">
-			<h1 class="lg:text-white font-gothicmedium !text-[64px]">
-				<span class="text-xl block uppercase tracking-wide">
+		<div class="w-full p-6 content lg:p-12 lg:max-w-2xl lg:absolute top-12 left-5 lg:bg-primary lg:bg-opacity-60">
+			<h1 class="lg:text-white !text-[3.5rem] tracking-tight">
+				<span class="block text-xl uppercase">
 					<?php echo esc_html( $currentissue_clean ); ?> Cover Story:</span>
 				<?php the_title(); ?>
 			</h1>
-				<div class="lg:mt-2 lg:text-white text-lg md:text-xl tracking-tight">
+				<div class="text-lg tracking-tight lg:mt-2 lg:text-white md:text-xl">
 					<p class="leading-normal">
 					<?php if ( function_exists( 'get_field' ) && get_field( 'ecpt_tagline' ) ) : ?> 
 						<?php the_field( 'ecpt_tagline' ); ?>
@@ -114,9 +114,9 @@ $parent                                    = get_queried_object_id();
 	endwhile;
 endif;
 	?>
-		<div class="news-section px-2 bg-grey-lightest">
-		<div class="w-full h-16 clear-both leading-none "></div>
-		<div class="prose lg:prose-lg xl:prose-xl mx-auto my-4 px-4">
+		<div class="px-2 news-section bg-grey-lightest">
+		<div class="clear-both w-full h-16 leading-none "></div>
+		<div class="px-4 mx-auto my-4 prose lg:prose-lg xl:prose-xl">
 				<div class="flex justify-between">
 					<div>
 						<h2>Featured Articles</h2>
@@ -134,8 +134,8 @@ endif;
 					?>
 				</div>
 			</div>
-			<div class="curated-posts-section-wrapper mx-auto my-4">
-				<div class="curated-posts grid grid-cols-1 lg:grid-cols-4 gap-4 lg:gap-0">
+			<div class="mx-auto my-4 curated-posts-section-wrapper">
+				<div class="grid grid-cols-1 gap-4 curated-posts lg:grid-cols-4 lg:gap-0">
 					<?php
 					$curated_content_query = new WP_Query( $curated_content );
 					// $count = 0;
@@ -168,9 +168,9 @@ endif;
 					?>
 			</div>
 			</div>
-			<div class="news-section browse-issues px-2 sm:px-0 bg-blue">
-				<div class="grid grid-cols-1 lg:grid-cols-2 gap-4 p-4 mx-auto">
-					<div class="bg-white p-6">
+			<div class="px-2 news-section browse-issues sm:px-0 bg-blue">
+				<div class="grid grid-cols-1 gap-4 p-4 mx-auto lg:grid-cols-2">
+					<div class="p-6 bg-white">
 						<h2>Browse Issues</h2>
 						<p>Arts & Sciences magazine highlights the scholarly expertise and global influence of Krieger School faculty, students, and alumni as they create new knowledge, conduct innovative research, and prepare tomorrow’s leaders.</p>
 						<p>Explore past issues of <em>Arts & Sciences Magazine</em>, going back to 2004.</p>
@@ -179,7 +179,7 @@ endif;
 						</p>
 					</div>
 					<div>
-					<div class="hidden lg:grid grid-cols-2 md:grid-cols-3 gap-4">
+					<div class="hidden grid-cols-2 gap-4 lg:grid md:grid-cols-3">
 					<div>
 						<img class="h-auto max-w-full rounded-lg" src="<?php echo esc_url( home_url( '/' ) ); ?>/wp-content/uploads/2021/11/F21_cover.jpg" alt="test">
 					</div>

@@ -9,7 +9,7 @@
 
 if ( ! defined( 'KSAS_MAGAZINE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'KSAS_MAGAZINE_VERSION', '1.0' );
+	define( 'KSAS_MAGAZINE_VERSION', '2.0' );
 }
 
 if ( ! function_exists( 'ksas_magazine_setup' ) ) :

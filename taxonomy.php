@@ -23,7 +23,7 @@ get_header();
 		<?php endif; ?>
 		<?php if ( have_posts() ) : ?>
 			<header class="page-header prose py-6">
-				<h1 class="font-gothicmedium !mb-0">Issue: <?php single_term_title(); ?></h1>
+				<h1 class="font-serif !mb-0">Issue: <?php single_term_title(); ?></h1>
 			</header><!-- .page-header -->
 			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mx-auto entry-content">
 

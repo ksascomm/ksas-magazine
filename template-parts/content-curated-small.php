@@ -1,13 +1,13 @@
 <?php $field = get_field_object( 'curated_order' );
 $value       = $field['value']; ?>
 <article class="curated-post small order-<?php echo $value; ?>" aria-labelledby="post-<?php the_ID(); ?>">
-	<div class="card p-4">
+	<div class="p-4 card">
 		<div class="card-section">
 			<header>
 				<div class="post-image">
 					<?php the_post_thumbnail( array( 650, 650 ) ); ?>
 				</div>
-				<h1 class="!text-2xl leading-normal !mt-5">
+				<h1 class="!text-2xl !leading-normal !mt-5 tracking-tighter">
 					<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>" class="curated-post-link"><?php the_title(); ?></a>
 				</h1>	
 			</header>

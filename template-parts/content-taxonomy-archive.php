@@ -28,19 +28,19 @@ endif;
 			<?php the_post_thumbnail( 'related-posts', array( 'class' => 'h-60 w-full object-cover object-top' ) ); ?>
 		</div>
 	<?php endif; ?>
-	<header class="entry-header px-2">
-		<?php the_title( '<h1 class="!text-2xl !leading-snug !my-0 !font-gothicmedium"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
-		<span class="text-lg uppercase leading-3 tracking-wide font-gothicmedium">
+	<header class="px-4 entry-header !my-4">
+		<?php the_title( '<h1 class="!text-2xl !leading-snug !my-0"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h1>' ); ?>
+		<span class="text-lg font-bold tracking-wide uppercase font-heavy">
 			<?php echo esc_html( $issue_name ); ?>
 	</span>
 	</header><!-- .entry-header -->
 
-	<div class="entry-content px-2">
+	<div class="px-4 entry-content">
 	<?php
 	$content         = get_the_excerpt();
 	$trimmed_content = wp_trim_words( $content, 15, '...' );
 	?>
-		<p class="leading-snug"><?php echo esc_html( $trimmed_content ); ?></p>
+		<p class="!my-4 leading-snug"><?php echo esc_html( $trimmed_content ); ?></p>
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
