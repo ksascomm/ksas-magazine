@@ -23,7 +23,6 @@ if ( ! class_exists( 'KSAS_Theme_Options' ) ) {
 				add_action( 'admin_menu', array( 'KSAS_Theme_Options', 'add_admin_menu' ) );
 				add_action( 'admin_init', array( 'KSAS_Theme_Options', 'register_settings' ) );
 			}
-
 		}
 
 		/**
@@ -94,7 +93,6 @@ if ( ! class_exists( 'KSAS_Theme_Options' ) ) {
 
 			// Return sanitized options
 			return $options;
-
 		}
 
 		/**
@@ -102,7 +100,8 @@ if ( ! class_exists( 'KSAS_Theme_Options' ) ) {
 		 *
 		 * @since 1.0.0
 		 */
-		public static function create_admin_page() { ?>
+		public static function create_admin_page() {
+			?>
 
 			<div class="wrap">
 
@@ -133,7 +132,6 @@ if ( ! class_exists( 'KSAS_Theme_Options' ) ) {
 			</div><!-- .wrap -->
 			<?php
 		}
-
 	}
 }
 new KSAS_Theme_Options();
@@ -288,12 +286,10 @@ if ( ! function_exists( 'asmagazine_entry_meta' ) ) :
 			// Rebecca.
 			echo '<p class="byline author">' . __( 'By Magazine Staff', 'asmagazine' ) . '</p>';
 
-		} else {
-			if ( is_plugin_active( 'publishpress-authors-pro/publishpress-authors-pro.php' ) ) {
+		} elseif ( is_plugin_active( 'publishpress-authors-pro/publishpress-authors-pro.php' ) ) {
 				do_action( 'pp_multiple_authors_show_author_box', false, 'inline' );
-			} else {
-				echo '<p class="byline author">' . __( 'By', 'asmagazine' ) . ' <a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" class="fn">' . get_the_author() . '</a></p>';
-			}
+		} else {
+			echo '<p class="byline author">' . __( 'By', 'asmagazine' ) . ' <a href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" rel="author" class="fn">' . get_the_author() . '</a></p>';
 		}
 	}
 endif;
@@ -303,3 +299,8 @@ endif;
  */
 add_image_size( 'related-posts', 600, 400 );
 add_image_size( 'home-curated-small', 350, 350 );
+
+/*
+ * Enable excerpts for pages.
+ */
+add_post_type_support( 'page', 'excerpt' );

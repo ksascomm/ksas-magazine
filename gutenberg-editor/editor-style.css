@@ -3,71 +3,25 @@ Description: Used to style the content editor in posts and pages
 */
 
 @font-face {
-  font-family: "quadon-bold";
-  src: url("../dist/fonts/quadon/Quadon-Bold.eot");
-  src: url("../dist/fonts/quadon/Quadon-Bold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../dist/fonts/quadon/Quadon-Bold.woff") format("woff"),
-    url("../dist/fonts/quadon/Quadon-Bold.ttf") format("truetype");
-  font-weight: 500;
+  font-family: "robotoslab-bold";
+  src: url("../dist/fonts/roboto_slab/RobotoSlab-Bold.woff") format("woff");
+  font-weight: 700;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "gentona-semibold";
-  src: url("../dist/fonts/gentona/Gentona-SemiBold.eot");
-  src: url("../dist/fonts/gentona/Gentona-SemiBold.eot?#iefix")
-      format("embedded-opentype"),
-    url("../dist/fonts/gentona/Gentona-SemiBold.woff") format("woff"),
-    url("../dist/fonts/gentona/Gentona-SemiBold.ttf") format("truetype");
+  font-family: "worksans-regular";
+  src: url("../dist/fonts/work_sans/WorkSans-Regular.woff") format("woff");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "worksans-semibold";
+  src: url("../dist/fonts/work_sans/WorkSans-SemiBold.woff") format("woff");
   font-weight: 600;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "gentona-light";
-  src: url("../dist/fonts/gentona/Gentona-Light.eot");
-  src: url("../dist/fonts/gentona/Gentona-Light.eot?#iefix")
-      format("embedded-opentype"),
-    url("../dist/fonts/gentona/Gentona-Light.woff") format("woff"),
-    url("../dist/fonts/gentona/Gentona-Light.ttf") format("truetype");
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'arnhem-blond';
-  src: url('../dist/fonts/arnhem/Arnhem-Blond.eot');
-  src: url('../dist/fonts/arnhem/Arnhem-Blond.eot?#iefix') format('embedded-opentype'),
-       url('../dist/fonts/arnhem/Arnhem-Blond.woff') format('woff'),
-       url('../dist/fonts/arnhem/Arnhem-Blond.ttf') format('truetype');
-  font-weight: 300;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'arnhem-blonditalic';
-  src: url('../dist/fonts/arnhem/Arnhem-BlondItalic.eot');
-  src: url('../dist/fonts/arnhem/Arnhem-BlondItalic.eot?#iefix') format('embedded-opentype'),
-       url('../dist/fonts/arnhem/Arnhem-BlondItalic.woff') format('woff'),
-       url('../dist/fonts/arnhem/Arnhem-BlondItalic.ttf') format('truetype');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'titling-gothic-medium';
-  src: url('../dist/fonts/titling-gothic/Titling-Gothic-Medium.eot');
-  src: url('../dist/fonts/titling-gothic/Titling-Gothic-Medium.eot?#iefix') format('embedded-opentype'),
-       url('../dist/fonts/titling-gothic/Titling-Gothic-Medium.woff') format('woff'),
-       url('../dist/fonts/titling-gothic/Titling-Gothic-Medium.ttf') format('truetype'),
-       url('../dist/fonts/titling-gothic/Titling-Gothic-Medium.svg#titlinggothicmedium') format('svg');
-  font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
@@ -88,36 +42,31 @@ Description: Used to style the content editor in posts and pages
 }
 
 body {
-  font-family: "arnhem-blond", Georgia, serif;
-  font-weight: 300;
+  font-family: "worksans-regular", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 400;
   font-size: 18px;
   color: #31261d;
 }
 
 /* TinyMCE Editor */
+/* TinyMCE Editor */
 .editor-styles-wrapper p strong,
 .editor-rich-text p strong {
-  font-family: "arnhem-bold", Georgia, serif;
-  font-weight: 700;
+  font-family: "worksans-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
 }
 
 p b,
 p strong,
 li b,
 li strong {
-  font-family: "arnhem-bold", Georgia, serif;
-  font-weight: 700;
+  font-family: "worksans-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
 }
 
 p u,
 li u {
   text-decoration: none;
-}
-
-p em,
-li em {
-  font-family: "arnhem-blonditalic", "Helvetica Neue", Roboto, sans-serif;
-  font-weight: 300;
 }
 
 .rich-text.editor-rich-text__editable.block-editor-rich-text__editable.wp-block-button__link {
@@ -162,13 +111,12 @@ li em {
 
 /* The Post Title */
 .editor-post-title__block .editor-post-title__input {
-  font-family: "titling-gothic-bold", "Helvetica Neue", Roboto, sans-serif;
+  font-family: "robotoslab-bold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 700;
 }
-
 /* Headings */
 .editor-writing-flow .wp-block h1 {
-  font-family: "titling-gothic-bold", "Helvetica Neue", Roboto, sans-serif;
+  font-family: "robotoslab-bold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 700;
 }
 .editor-writing-flow .wp-block h2,
@@ -176,12 +124,12 @@ li em {
 .editor-writing-flow .wp-block h4,
 .editor-writing-flow .wp-block h5,
 .editor-writing-flow .wp-block h6 {
-  font-family: "gentona-bold", "Helvetica Neue", Roboto, sans-serif;
-  font-weight: 700;
+  font-family: "worksans-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
 }
 
 h1 {
-  font-family: "titling-gothic-bold", "Helvetica Neue", Roboto, sans-serif;
+  font-family: "robotoslab-bold", "Helvetica Neue", Roboto, sans-serif;
   font-weight: 700;
 }
 
@@ -190,18 +138,16 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: "gentona-bold", "Helvetica Neue", Roboto, sans-serif;
-  font-weight: 700;
+  font-family: "worksans-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
 }
 
 /* Blockquote styles */
-.wp-block blockquote {
-  font-family: "arnhem-blonditalic", "Helvetica Neue", Roboto, sans-serif;
-  font-weight: 300;
-  color: #aaa;
-  margin-left: 20px;
-  border-left: 0;
-  padding-left: 0;
+.wp-block-quote__citation {
+  font-size: 1rem;
+  font-family: "worksans-semibold", "Helvetica Neue", Roboto, sans-serif;
+  font-weight: 600;
+  color: #31261d;
 }
 
 .wp-block blockquote .editor-rich-text {
