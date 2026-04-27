@@ -20,7 +20,7 @@ get_header();
 		<?php endif; ?>
 		<?php if ( have_posts() ) : ?>
 			<header class="py-6 prose page-header">
-				<h1 class="!mb-0">Topic: <?php single_term_title(); ?> </h1>
+				<h1 class="!mb-0 capitalize">Topic: <?php single_term_title(); ?> </h1>
 			</header><!-- .page-header -->
 			<div class="grid grid-cols-1 gap-4 p-4 mx-auto md:grid-cols-2 lg:grid-cols-3 entry-content">
 

@@ -1,4 +1,5 @@
 const { NoEmitOnErrorsPlugin } = require("webpack");
+const plugin = require("tailwindcss/plugin"); // Added this import
 
 module.exports = {
   content: [
@@ -139,37 +140,32 @@ module.exports = {
                 marginBottom: "0rem",
                 fontSize: "2.25rem",
                 fontWeight: "700",
-                fontFamily:
-                  "oswald-bold,system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontFamily: "oswald-bold, system-ui, serif",
               },
               h2: {
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
                 maxWidth: "90ch",
                 fontSize: "2rem",
-                fontFamily:
-                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontFamily: "worksans-bold, system-ui, sans-serif",
                 fontWeight: 700,
               },
               h3: {
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
                 fontSize: "1.6rem",
-                fontFamily:
-                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontFamily: "worksans-bold, system-ui, sans-serif",
                 fontWeight: 700,
               },
               h4: {
                 marginTop: "0.5rem",
                 marginBottom: "0.5rem",
                 fontSize: "1.25rem",
-                fontFamily:
-                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontFamily: "worksans-bold, system-ui, sans-serif",
                 fontWeight: 700,
               },
               h5: {
-                fontFamily:
-                  "worksans-bold, system-ui, BlinkMacSystemFont, -apple-system, Segoe UI, sans-serif",
+                fontFamily: "worksans-bold, system-ui, sans-serif",
                 fontWeight: 700,
               },
               p: {
@@ -221,6 +217,12 @@ module.exports = {
               "blockquote p:first-of-type::before": {
                 content: "none",
               },
+              "a:has(img)": {
+                borderBottomWidth: "0",
+              },
+              "a:hover:has(img)": {
+                borderBottomWidth: "0",
+              },
             },
           ],
         },
@@ -250,6 +252,14 @@ module.exports = {
   plugins: [
     require("@tailwindcss/typography")({
       modifiers: ["lg"],
+    }),
+    // Custom plugin for your specific WordPress selector
+    plugin(function ({ addComponents }) {
+      addComponents({
+        ".post .entry-content p": {
+          "max-width": "90ch",
+        },
+      });
     }),
   ],
 };

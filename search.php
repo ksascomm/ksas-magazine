@@ -10,9 +10,9 @@
 get_header();
 ?>
 
-	<main id="site-content" class="site-main prose lg:prose-lg mx-auto">
+	<main id="site-content" class="mx-auto prose site-main lg:prose-lg">
 
-			<header class="page-header prose px-12 py-6">
+			<header class="px-12 py-6 prose page-header">
 				<h1 class="entry-title">
 					<?php
 					/* translators: %s: search query. */
@@ -21,7 +21,7 @@ get_header();
 				</h1>
 			</header><!-- .page-header -->
 			<div class="not-prose">
-			<gcse:search></gcse:search>
+				<gcse:search></gcse:search>
 			</div>
 	</main><!-- #main -->
 

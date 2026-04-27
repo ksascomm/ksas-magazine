@@ -15,7 +15,7 @@ $issues = get_the_terms( $post->ID, 'volume' );
 if ( $issues && ! is_wp_error( $issues ) ) :
 	$issue_names = array();
 	foreach ( $issues as $issue ) {
-		if ( $issue->term_id != 114 ) { // exclude "Feature" from echo
+		if ( $issue->term_id != 114 ) { // exclude "Feature" from echo.
 			$issue_names[] = $issue->name;
 		}
 	}

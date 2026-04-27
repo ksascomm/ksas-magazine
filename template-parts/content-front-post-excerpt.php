@@ -16,17 +16,17 @@
 			<?php the_post_thumbnail( 'related-posts', array( 'class' => 'h-60 w-full object-cover object-top' ) ); ?>
 		</div>
 	<?php endif; ?>
-	<header class="entry-header px-4 pt-4">
+	<header class="px-4 pt-4 entry-header">
 		<?php the_title( '<h3 class="entry-title !my-0"><a class="front-post" href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h3>' ); ?>
 	</header><!-- .entry-header -->
-	<div class="entry-content px-4 leading-normal text-lg">
+	<div class="px-4 text-lg leading-normal entry-content">
 	<?php if ( function_exists( 'get_field' ) && get_field( 'ecpt_tagline' ) ) : ?>
 		<p><?php the_field( 'ecpt_tagline' ); ?></p>
 	<?php else : ?>
 		<?php
 			$content         = get_the_excerpt();
 			$trimmed_content = wp_trim_words( $content, 15, '...' );
-			?>
+		?>
 		<p class="leading-snug"><?php echo esc_html( $trimmed_content ); ?></p>
 	<?php endif; ?>
 	</div><!-- .entry-content -->

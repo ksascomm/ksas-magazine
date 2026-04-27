@@ -19,7 +19,6 @@ if ( ! function_exists( 'ksas_magazine_start_cleanup' ) ) :
 
 		// Clean up comment styles in the head.
 		add_action( 'wp_head', 'ksas_magazine_remove_recent_comments_style', 1 );
-
 	}
 	add_action( 'after_setup_theme', 'ksas_magazine_start_cleanup' );
 endif;

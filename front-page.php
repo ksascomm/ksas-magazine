@@ -8,71 +8,40 @@
  */
 
 get_header();
-?>
 
-<?php
+// 1. Setup Issue Data.
 $currentissue       = asmag_get_theme_option( 'input_example' );
 $currentissue_clean = ucwords( str_replace( '-', ' ', $currentissue ) );
 
-$volume                                    = get_the_volume( $post );
-$parent                                    = get_queried_object_id();
-	$asmag_homepage_coverstory_query       = new WP_Query(
-		array(
-			'post_type'      => 'page',
-			'volume'         => $currentissue,
-			// 'post_parent' => $parent,
-			// category must be 'Cover Story!'
-			'category__in'   => array( 136 ),
-			'orderby'        => 'menu_order',
-			'order'          => 'ASC',
-			'posts_per_page' => 1,
-		)
-	);
-	$asmag_homepage_highlighted_news_query = new WP_Query(
-		array(
-			'post_type'      => 'post',
-			'volume'         => $currentissue,
-			'category__in'   => array( 72 ), // From the Dean
-			'orderby'        => 'modified',
-			'order'          => 'DESC',
-			'posts_per_page' => 1,
-		)
-	);
-	$curated_content                       = ( array(
-		'posts_per_page' => 6,
-		'post_type'      => array( 'post', 'page' ),
-		// 'volume' => $currentissue,
-		'meta_query'     => array(
-			array(
-				'key'     => 'curated_content',
-				'value'   => '1',
-				'compare' => '=',
-			),
-		),
-		'meta_key'       => 'curated_order',
-		'orderby'        => 'meta_value',
+// 2. Cover Story Query.
+$asmag_homepage_coverstory_query = new WP_Query(
+	array(
+		'post_type'      => 'page',
+		'volume'         => $currentissue,
+		'category__in'   => array( 136 ), // Cover Story!
+		'orderby'        => 'menu_order',
 		'order'          => 'ASC',
-	) );
+		'posts_per_page' => 1,
+	)
+);
 
-	$asmag_homepage_news_query = new WP_Query(
+
+// 3. Curated Content Query Configuration.
+$curated_content_args = array(
+	'posts_per_page' => 6,
+	'post_type'      => array( 'post', 'page' ),
+	'meta_query'     => array(
 		array(
-			'post_type'      => 'post',
-			'volume'         => $currentissue,
-			// 'category__in'   => array( 1, 72 ), //News + From the Dean
-			'tag__not_in'    => array( 100, 141 ), // ?100? + Feature Story
-			'orderby'        => 'modified',
-			'order'          => 'ASC',
-			'posts_per_page' => '100',
-			'meta_query'     => array(
-				array(
-					'key'     => 'curated_content',
-					'value'   => '1',
-					'compare' => '!=',
-				),
-			),
-		)
-	);
-	?>
+			'key'     => 'curated_content',
+			'value'   => '1',
+			'compare' => '=',
+		),
+	),
+	'meta_key'       => 'curated_order',
+	'orderby'        => 'meta_value',
+	'order'          => 'ASC',
+);
+?>
 	<main id="site-content" class="prose site-main front lg:prose-lg">
 
 	<?php
@@ -98,20 +67,23 @@ $parent                                    = get_queried_object_id();
 				<?php the_title(); ?>
 			</h1>
 				<div class="text-lg tracking-tight lg:mt-2 lg:text-white md:text-xl">
-					<p class="leading-normal">
-					<?php if ( function_exists( 'get_field' ) && get_field( 'ecpt_tagline' ) ) : ?> 
-						<?php the_field( 'ecpt_tagline' ); ?>
-					<?php else : ?>
-						<?php the_excerpt(); ?>
-					<?php endif; ?>
-					<p><a href="<?php the_permalink(); ?>" class="inline-flex text-lg bg-blue !text-white px-3 py-2 border-none hover:bg-blue-light hover:!text-primary hover:!border-none">Read This Story</a></p>
-					</p>
-				</div>
+				<?php if ( function_exists( 'get_field' ) && get_field( 'ecpt_tagline' ) ) : ?> 
+					<p class="leading-normal"><?php echo esc_html( get_field( 'ecpt_tagline' ) ); ?></p>
+				<?php else : ?>
+					<div class="leading-normal"><?php the_excerpt(); ?></div>
+				<?php endif; ?>
+				<p>
+					<a href="<?php echo esc_url( get_permalink() ); ?>" class="inline-flex text-lg bg-blue !text-white px-3 py-2 border-none hover:bg-blue-light hover:!text-primary">
+						Read This Story
+					</a>
+				</p>
+			</div>
 		</div>
 	</div>
 </div>
 			<?php
 	endwhile;
+		wp_reset_postdata();
 endif;
 	?>
 		<div class="px-2 news-section bg-grey-lightest">
@@ -121,51 +93,44 @@ endif;
 					<div>
 						<h2>Featured Articles</h2>
 					</div>
-					<?php
-					if ( get_field( 'current_issue', 'option' ) ) :
-						$current_issue_link = get_field( 'current_issue', 'option' );
-						?>
-						<div>
-							<a class="button" href="<?php echo esc_url( $current_issue_link ); ?>">Explore <?php echo esc_html( $currentissue_clean ); ?> Issue&nbsp;<span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span></a>
-						</div>
-							<?php
-
-				endif;
+				<?php
+				if ( function_exists( 'get_field' ) && get_field( 'current_issue', 'option' ) ) :
+					$current_issue_link = get_field( 'current_issue', 'option' );
 					?>
+					<div>
+						<a class="button" href="<?php echo esc_url( $current_issue_link ); ?>">
+							Explore <?php echo esc_html( $currentissue_clean ); ?> Issue&nbsp;<span class="fa-solid fa-circle-chevron-right" aria-hidden="true"></span>
+						</a>
+					</div>
+				<?php endif; ?>
 				</div>
 			</div>
-			<div class="mx-auto my-4 curated-posts-section-wrapper">
+			<div class="pb-12 mx-auto mt-4 curated-posts-section-wrapper">
 				<div class="grid grid-cols-1 gap-4 curated-posts lg:grid-cols-4 lg:gap-0">
 					<?php
-					$curated_content_query = new WP_Query( $curated_content );
-					// $count = 0;
+					$curated_content_query = new WP_Query( $curated_content_args );
 					if ( $curated_content_query->have_posts() ) :
-						?>
-							<?php
-							while ( $curated_content_query->have_posts() ) :
-								$curated_content_query->the_post();
-								// $count++;
-								// if ($count == 1 || $count == 6) :
-								$field = get_field_object( 'curated_order' );
-								$value = $field['value'];
-								if ( function_exists( 'get_field' ) && ( get_field( 'curated_order' ) == '1' || get_field( 'curated_order' ) == '6' ) ) :
-									?>
-								<div class="lg:col-span-2 article-teaser-<?php echo $value; ?>">
-										<?php get_template_part( 'template-parts/content', 'curated-large' ); ?>
-								</div>
-								<?php else : ?>
-								<div class="article-teaser-<?php echo $value; ?>">
-									<?php get_template_part( 'template-parts/content', 'curated-small' ); ?>
-								</div>
-									<?php
-								endif;
-							endwhile;
-							?>
-				</div>
-						<?php
+						while ( $curated_content_query->have_posts() ) :
+							$curated_content_query->the_post();
+							$curated_order = get_field( 'curated_order' );
+
+							// If order is 1 or 6, use the large template part across 2 columns.
+							if ( '1' === $curated_order || '6' === $curated_order ) :
+								?>
+							<div class="lg:col-span-2 article-teaser-<?php echo esc_attr( $curated_order ); ?>">
+								<?php get_template_part( 'template-parts/content', 'curated-large' ); ?>
+							</div>
+							<?php else : ?>
+							<div class="article-teaser-<?php echo esc_attr( $curated_order ); ?>">
+								<?php get_template_part( 'template-parts/content', 'curated-small' ); ?>
+							</div>
+								<?php
+							endif;
+						endwhile;
 						wp_reset_postdata();
 				endif;
 					?>
+				</div>
 			</div>
 			</div>
 			<div class="px-2 news-section browse-issues sm:px-0 bg-blue">

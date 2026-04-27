@@ -25,7 +25,7 @@ if ( function_exists( 'register_block_pattern_category' ) ) {
  * Register Block Patterns.
  */
 if ( function_exists( 'register_block_pattern' ) ) {
-	// Simple Hero Section
+	// Simple Hero Section.
 	register_block_pattern(
 		'ksasmagazine/simple-hero',
 		array(
@@ -34,7 +34,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			'viewportWidth' => 1400,
 			'content'       => '
 			<!-- wp:columns {"verticalAlignment":"center"} -->
-			<div class="wp-block-columns are-vertically-aligned-center px-2"><!-- wp:column {"verticalAlignment":"center"} -->
+			<div class="px-2 wp-block-columns are-vertically-aligned-center"><!-- wp:column {"verticalAlignment":"center"} -->
 			<div class="wp-block-column is-vertically-aligned-center"><!-- wp:heading {"className":"mt-0"} -->
 			<h2 class="mt-0">Study Living Systems from Unique Perspectives</h2>
 			<!-- /wp:heading -->
@@ -280,7 +280,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:columns -->
 			<div class="wp-block-columns three-column-feature"><!-- wp:column -->
-			<div class="wp-block-column mb-4 px-6 py-8 overflow-hidden bg-white rounded-md shadow-md"><!-- wp:heading -->
+			<div class="px-6 py-8 mb-4 overflow-hidden bg-white rounded-md shadow-md wp-block-column"><!-- wp:heading -->
 			<h2>Explore</h2>
 			<!-- /wp:heading -->
 
@@ -290,7 +290,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:column -->
 
 			<!-- wp:column -->
-			<div class="wp-block-column mb-4 px-6 py-8 overflow-hidden bg-white rounded-md shadow-md"><!-- wp:heading -->
+			<div class="px-6 py-8 mb-4 overflow-hidden bg-white rounded-md shadow-md wp-block-column"><!-- wp:heading -->
 			<h2>Learn</h2>
 			<!-- /wp:heading -->
 
@@ -300,7 +300,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- /wp:column -->
 
 			<!-- wp:column -->
-			<div class="wp-block-column mb-4 px-6 py-8 overflow-hidden bg-white rounded-md shadow-md"><!-- wp:heading -->
+			<div class="px-6 py-8 mb-4 overflow-hidden bg-white rounded-md shadow-md wp-block-column"><!-- wp:heading -->
 			<h2>Discover</h2>
 			<!-- /wp:heading -->
 
@@ -323,7 +323,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- wp:group {"align":"wide","className":"four-column-feature"} -->
 			<div class="wp-block-group alignwide four-column-feature"><div class="wp-block-group__inner-container"><!-- wp:columns {"className":""} -->
 			<div class="wp-block-columns"><!-- wp:column {"width":"41%","className":"border-r-4 border-primary"} -->
-			<div class="wp-block-column border-r-4 border-primary" style="flex-basis:41%"><!-- wp:heading {"className":""} -->
+			<div class="border-r-4 wp-block-column border-primary" style="flex-basis:41%"><!-- wp:heading {"className":""} -->
 			<h2 class="">Transport is defined as a movement</h2>
 			<!-- /wp:heading --></div>
 			<!-- /wp:column -->
@@ -338,7 +338,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			<!-- wp:columns {"className":""} -->
 			<div class="wp-block-columns"><!-- wp:column {"className":""} -->
 			<div class="wp-block-column"><!-- wp:group {"className":"overflow-hidden bg-white rounded-md shadow-md"} -->
-			<div class="wp-block-group overflow-hidden bg-white rounded-md shadow-md"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/lefvrkgupja-scaled.jpg","id":22929,"dimRatio":0,"minHeight":250,"className":""} -->
+			<div class="overflow-hidden bg-white rounded-md shadow-md wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/lefvrkgupja-scaled.jpg","id":22929,"dimRatio":0,"minHeight":250,"className":""} -->
 			<div class="wp-block-cover" style="min-height:250px"><img class="wp-block-cover__image-background wp-image-22929" alt="" src="https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/lefvrkgupja-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","className":"","fontSize":"large"} -->
 			<p class="has-text-align-center has-large-font-size"></p>
 			<!-- /wp:paragraph --></div></div>
@@ -362,7 +362,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column {"className":""} -->
 			<div class="wp-block-column"><!-- wp:group {"className":"overflow-hidden bg-white rounded-md shadow-md"} -->
-			<div class="wp-block-group overflow-hidden bg-white rounded-md shadow-md"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/9e1kncontpm-scaled.jpg","id":22928,"dimRatio":0,"minHeight":250,"className":""} -->
+			<div class="overflow-hidden bg-white rounded-md shadow-md wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/9e1kncontpm-scaled.jpg","id":22928,"dimRatio":0,"minHeight":250,"className":""} -->
 			<div class="wp-block-cover" style="min-height:250px"><img class="wp-block-cover__image-background wp-image-22928" alt="" src="https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/9e1kncontpm-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","className":"","fontSize":"large"} -->
 			<p class="has-text-align-center has-large-font-size"></p>
 			<!-- /wp:paragraph --></div></div>
@@ -386,7 +386,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column {"className":""} -->
 			<div class="wp-block-column"><!-- wp:group {"className":"overflow-hidden bg-white rounded-md shadow-md"} -->
-			<div class="wp-block-group overflow-hidden bg-white rounded-md shadow-md"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/ucuoscdcao4-scaled.jpg","id":22930,"dimRatio":0,"minHeight":250,"className":""} -->
+			<div class="overflow-hidden bg-white rounded-md shadow-md wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/ucuoscdcao4-scaled.jpg","id":22930,"dimRatio":0,"minHeight":250,"className":""} -->
 			<div class="wp-block-cover" style="min-height:250px"><img class="wp-block-cover__image-background wp-image-22930" alt="" src="https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/ucuoscdcao4-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","className":"","fontSize":"large"} -->
 			<p class="has-text-align-center has-large-font-size"></p>
 			<!-- /wp:paragraph --></div></div>
@@ -410,7 +410,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 
 			<!-- wp:column {"className":""} -->
 			<div class="wp-block-column"><!-- wp:group {"className":"overflow-hidden bg-white rounded-md shadow-md"} -->
-			<div class="wp-block-group overflow-hidden bg-white rounded-md shadow-md"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/g85oiagzosm-scaled.jpg","id":22927,"dimRatio":0,"minHeight":250,"className":""} -->
+			<div class="overflow-hidden bg-white rounded-md shadow-md wp-block-group"><div class="wp-block-group__inner-container"><!-- wp:cover {"url":"https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/g85oiagzosm-scaled.jpg","id":22927,"dimRatio":0,"minHeight":250,"className":""} -->
 			<div class="wp-block-cover" style="min-height:250px"><img class="wp-block-cover__image-background wp-image-22927" alt="" src="https://demo.gutenberghub.com/templates/wp-content/uploads/sites/10/2020/10/g85oiagzosm-scaled.jpg" data-object-fit="cover"/><div class="wp-block-cover__inner-container"><!-- wp:paragraph {"align":"center","placeholder":"Write title…","className":"","fontSize":"large"} -->
 			<p class="has-text-align-center has-large-font-size"></p>
 			<!-- /wp:paragraph --></div></div>
@@ -511,7 +511,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 		)
 	);
 
-	// Horizontal Call to Action
+	// Horizontal Call to Action.
 	register_block_pattern(
 		'ksasmagazine/horizontal-cta',
 		array(
@@ -521,7 +521,7 @@ if ( function_exists( 'register_block_pattern' ) ) {
 			'content'       => '
 			<!-- wp:group {"align":"full","style":{"color":{"background":"#f8f8f8"}}} -->
 			<div class="wp-block-group alignfull has-background" style="background-color:#f8f8f8"><!-- wp:columns {"align":"wide","className":"pl-12"} -->
-			<div class="wp-block-columns alignwide pl-12"><!-- wp:column -->
+			<div class="pl-12 wp-block-columns alignwide"><!-- wp:column -->
 			<div class="wp-block-column"><!-- wp:heading {"className":"mt-0"} -->
 			<h2 class="mt-0">We are locally crafted food &amp; wine serving since 1980.</h2>
 			<!-- /wp:heading -->

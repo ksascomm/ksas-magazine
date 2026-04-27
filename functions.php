@@ -9,7 +9,7 @@
 
 if ( ! defined( 'KSAS_MAGAZINE_VERSION' ) ) {
 	// Replace the version number of the theme on each release.
-	define( 'KSAS_MAGAZINE_VERSION', '2.0' );
+	define( 'KSAS_MAGAZINE_VERSION', '2.1.0' );
 }
 
 if ( ! function_exists( 'ksas_magazine_setup' ) ) :
@@ -21,13 +21,6 @@ if ( ! function_exists( 'ksas_magazine_setup' ) ) :
 	 * as indicating support for post thumbnails.
 	 */
 	function ksas_magazine_setup() {
-		/*
-		 * Make theme available for translation.
-		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on KSAS_Magazine, use a find and replace
-		 * to change 'ksas-magazine-tailwind' to the name of your theme in all the template files.
-		 */
-		// load_theme_textdomain( 'ksas-magazine-tailwind', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -171,11 +164,11 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 /**
  * Include a skip to content link at the top of the page so that users can bypass the menu.
  */
-function twentytwenty_skip_link() {
-	echo '<div role="navigation" aria-label="Skip to main content"><a class="sr-only skip-link" href="#site-content">' . __( 'Skip to the content', 'ksas-magazine-tailwind' ) . '</a></div>';
+function ksas_skip_link() {
+	echo '<div role="navigation" aria-label="Skip to main content"><a class="skip-link screen-reader-text" href="#site-content">' . esc_html__( 'Skip to the content', 'ksas-magazine-tailwind' ) . '</a></div>';
 }
 
-add_action( 'wp_body_open', 'twentytwenty_skip_link', 5 );
+add_action( 'wp_body_open', 'ksas_skip_link', 5 );
 
 /**
  * Enqueue scripts and styles.
@@ -189,12 +182,37 @@ function ksas_magazine_scripts() {
 	wp_enqueue_script( 'ksas-magazine-script', get_template_directory_uri() . '/dist/js/bundle.min.js', array( 'jquery' ), KSAS_MAGAZINE_VERSION, true );
 	wp_script_add_data( 'ksas-magazine-script', 'defer', true );
 
+	wp_enqueue_script( 'google-cse', 'https://cse.google.com/cse.js?cx=012258670098148303364:rjbbbscnowo', array(), KSAS_MAGAZINE_VERSION, false );
+
 	wp_enqueue_script( 'font-awesome', 'https://kit.fontawesome.com/72c92fef89.js', array(), '6.7.2', false );
 	wp_script_add_data( 'fontawesome', array( 'crossorigin' ), array( 'anonymous' ) );
 }
 add_action( 'wp_enqueue_scripts', 'ksas_magazine_scripts' );
 
-/** Add defer attribute to specific scripts */
+/**
+ * Enqueue Siteimprove Analytics script.
+ */
+function ksas_enqueue_siteimprove() {
+	// Only enqueue if the ACF option is set.
+	if ( get_field( 'siteimprove', 'option' ) ) {
+		wp_enqueue_script(
+			'siteimprove-analytics',
+			'https://siteimproveanalytics.com/js/siteanalyze_11464.js',
+			array(),
+			null,
+			array( 'strategy' => 'async' )
+		);
+	}
+}
+add_action( 'wp_enqueue_scripts', 'ksas_enqueue_siteimprove' );
+
+/**
+ * Add defer attribute to specific scripts.
+ *
+ * @param string $tag    The <script> tag for the enqueued script.
+ * @param string $handle The script's registered handle.
+ * @return string The modified <script> tag.
+ */
 function add_defer_attribute( $tag, $handle ) {
 	// Add script handles to the array below.
 	$scripts_to_defer = array( 'font-awesome' );
@@ -209,7 +227,13 @@ function add_defer_attribute( $tag, $handle ) {
 
 add_filter( 'script_loader_tag', 'add_defer_attribute', 10, 2 );
 
-/** Add async attribute to specific scripts */
+/**
+ * Add async attribute to specific scripts.
+ *
+ * @param string $tag    The <script> tag for the enqueued script.
+ * @param string $handle The script's registered handle.
+ * @return string The modified <script> tag.
+ */
 function add_async_attribute( $tag, $handle ) {
 	// Add script handles to the array below.
 	$scripts_to_async = array( 'google-tag-manager' );
@@ -223,71 +247,3 @@ function add_async_attribute( $tag, $handle ) {
 }
 
 add_filter( 'script_loader_tag', 'add_async_attribute', 10, 2 );
-
-/**
- * Get the top ancestor ID
- * Used to only show child & grandchild pages in sidebar dropdown menu
- */
-function get_the_top_ancestor_id() {
-	global $post;
-	if ( $post->post_parent ) {
-		$ancestors = array_reverse( get_post_ancestors( $post->ID ) );
-		return $ancestors[0];
-	} else {
-		return $post->ID;
-	}
-}
-
-/**
- * WP_nav_menu separate submenu output.
- *
- * Optional $args contents:
- *
- * string theme_location - The menu that is desired.  Accepts (matching in order) id, slug, name. Defaults to blank.
- * string xpath - Optional. xPath syntax.
- * string before - Optional. Text before the menu tree.
- * string after - Optional. Text after the menu tree.
- * bool echo - Optional, default is TRUE. Whether to echo the menu or return it.
- *
- * @param array $args Arguments
- * @return String If $echo value is set to FALSE.
- *
- * @link https://www.isitwp.com/wp_nav_menu-separate-submenu-output/
- */
-function internal_page_submenu( $args = array() ) {
-	$defaults = array(
-		'theme_location' => 'main-nav',
-		'xpath'          => "./li[contains(@class,'current-menu-item') or contains(@class,'current-menu-ancestor')]/ul",
-		'before'         => '',
-		'after'          => '',
-		'echo'           => true,
-	);
-	$args     = wp_parse_args( $args, $defaults );
-	$args     = (object) $args;
-
-	$output = array();
-
-	$menu_tree     = wp_nav_menu(
-		array(
-			'theme_location' => $args->theme_location,
-			'container'      => '',
-			'echo'           => false,
-		)
-	);
-	$menu_tree_XML = new SimpleXMLElement( $menu_tree );
-	$path          = $menu_tree_XML->xpath( $args->xpath );
-
-	$output[] = $args->before;
-
-	if ( ! empty( $path ) ) {
-		$output[] = $path[0]->asXML();
-	}
-
-	$output[] = $args->after;
-
-	if ( $args->echo ) {
-		echo implode( '', $output );
-	} else {
-		return implode( '', $output );
-	}
-}

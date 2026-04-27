@@ -13,7 +13,7 @@
 get_header();
 ?>
 
-	<main id="site-content" class="site-main prose lg:prose-lg mx-auto">
+	<main id="site-content" class="mx-auto prose site-main lg:prose-lg">
 		<?php
 		if ( function_exists( 'bcn_display' ) ) :
 			?>
@@ -22,10 +22,15 @@ get_header();
 		</div>
 		<?php endif; ?>
 		<?php if ( have_posts() ) : ?>
-			<header class="page-header prose py-6">
-				<h1 class="font-serif !mb-0">Issue: <?php single_term_title(); ?></h1>
+			<?php
+			$current_term  = get_queried_object();
+			$section_slugs = array( 'feature', 'web-extra', 'spotlight' );
+			$heading_label = in_array( $current_term->slug, $section_slugs, true ) ? 'Section' : 'Issue';
+			?>
+			<header class="py-6 prose page-header">
+				<h1 class="!mb-0 capitalize"><?php echo esc_html( $heading_label ); ?>: <?php single_term_title(); ?></h1>
 			</header><!-- .page-header -->
-			<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 p-4 mx-auto entry-content">
+			<div class="grid grid-cols-1 gap-4 p-4 mx-auto md:grid-cols-2 lg:grid-cols-3 entry-content">
 
 			<?php
 			/* Start the Loop */

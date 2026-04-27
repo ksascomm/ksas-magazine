@@ -1459,6 +1459,12 @@ ul.page-numbers li.active a {
 	padding-right: .25rem;
 }
 
+.breadcrumbs .archive.taxonomy.post_tag,
+.breadcrumbs .archive.taxonomy.volume,
+.breadcrumbs .archive.taxonomy.category {
+	text-transform: capitalize;
+}
+
 /* Yoast
 --------------------------------------------- */
 .prose p.schema-how-to-step-text,
@@ -3449,7 +3455,10 @@ body>.is-root-container>.wp-block-template-part>.wp-block-cover,
 }
 
 
-.curated-posts .curated-post .card {
+.curated-posts .curated-post .card,
+.curated-posts .curated-post .card .post-image a,
+.curated-posts .curated-post .card .post-image a:focus,
+.curated-posts .curated-post .card .post-image a:hover {
 	border: none;
 }
 

@@ -17,7 +17,6 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="date" content="<?php the_modified_date(); ?>" />
 	<link rel="profile" href="https://gmpg.org/xfn/11">
-	<meta name='robots' content='noindex,nofollow' />
 	<?php wp_head(); ?>
 	<!-- Google Tag Manager -->
 	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
@@ -26,13 +25,6 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-T9S2PC4');</script>
 	<!-- End Google Tag Manager -->
-	<?php
-	if ( get_field( 'siteimprove', 'option' ) ) :
-		?>
-	<!-- Siteimprove Analytics -->
-	<script async src="https://siteimproveanalytics.com/js/siteanalyze_11464.js"></script>
-	<!-- End Siteimprove Analytics -->
-	<?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -78,7 +70,7 @@
 						<span class="toggle-icon">
 							<?php twentytwenty_the_theme_svg( 'search' ); ?>
 						</span>
-						<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'ksas-magazine-tailwind' ); ?></span>
+						<span class="toggle-text"><?php esc_html_e( 'Search', 'ksas-magazine-tailwind' ); ?></span>
 					</span>
 				</button><!-- .search-toggle -->
 				<button class="toggle nav-toggle mobile-nav-toggle" data-toggle-target=".menu-modal"  data-toggle-body-class="showing-menu-modal" aria-expanded="false" data-set-focus=".close-nav-toggle" type="button">
@@ -86,7 +78,7 @@
 						<span class="toggle-icon">
 							<?php twentytwenty_the_theme_svg( 'ellipsis' ); ?>
 						</span>
-						<span class="toggle-text"><?php _e( 'Menu', 'ksas-magazine-tailwind' ); ?></span>
+						<span class="toggle-text"><?php esc_html_e( 'Menu', 'ksas-magazine-tailwind' ); ?></span>
 					</span>
 				</button><!-- .nav-toggle -->
 			</div><!-- .header-inner -->
@@ -117,7 +109,7 @@
 						<button class="toggle search-toggle desktop-search-toggle" data-toggle-target=".search-modal" data-toggle-body-class="showing-search-modal" data-set-focus=".search-modal .search-field" aria-expanded="false" type="button">
 							<span class="toggle-inner">
 							<?php twentytwenty_the_theme_svg( 'search' ); ?>
-								<span class="toggle-text"><?php _ex( 'Search', 'toggle text', 'ksas-magazine-tailwind' ); ?></span>
+								<span class="toggle-text"><?php esc_html_e( 'Search', 'ksas-magazine-tailwind' ); ?></span>
 							</span>
 						</button><!-- .search-toggle -->
 

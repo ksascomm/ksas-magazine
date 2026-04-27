@@ -26,19 +26,25 @@ $volume_name = get_the_volume_name( $post );
 		?>
 
 		<div class="entry-meta">
-			<p class="byline issue"><?php echo $volume_name; ?></p>
+			<p class="byline issue"><?php echo esc_html( $volume_name ); ?></p>
 			<?php if ( ! has_category( 'dean' ) ) : ?>
 				<?php asmagazine_entry_meta(); ?>
+			<?php endif; ?>
+			<?php if ( has_category( 'web-extra' ) ) : ?>
+				<p class="byline issue">
+				Posted:
+				<?php
+				ksas_magazine_posted_on();
+				?>
+				</p>
 			<?php endif; ?>
 		</div>
 
 	</header><!-- .entry-header -->
 	<?php
-	if ( function_exists( 'get_field' ) && get_field( 'show_featured_image' ) == 1 ) {
+	if ( function_exists( 'get_field' ) && get_field( 'show_featured_image' ) == 1 ) :
 		ksas_magazine_post_thumbnail();
-	} else {
-		// do nothing
-	}
+	endif;
 	?>
 	<div class="entry-content">
 	<?php

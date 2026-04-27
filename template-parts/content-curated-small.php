@@ -1,22 +1,50 @@
-<?php $field = get_field_object( 'curated_order' );
-$value       = $field['value']; ?>
-<article class="curated-post small order-<?php echo $value; ?>" aria-labelledby="post-<?php the_ID(); ?>">
-	<div class="p-4 card">
+<?php
+/**
+ * Template part for displaying small curated posts
+ *
+ * @package KSAS_Magazine
+ */
+
+$curated_field = get_field_object( 'curated_order' );
+$curated_order = ( $curated_field && isset( $curated_field['value'] ) ) ? $curated_field['value'] : 'default';
+?>
+
+<article <?php post_class( 'curated-post small order-' . esc_attr( $curated_order ) ); ?> aria-labelledby="post-<?php the_ID(); ?>">
+	<div class="h-full p-4 border-t-4 card card-box border-primary">
 		<div class="card-section">
 			<header>
-				<div class="post-image">
-					<?php the_post_thumbnail( array( 650, 650 ) ); ?>
+			<?php if ( has_post_thumbnail() ) : ?>
+				<div class="relative mb-5 post-image">
+					<a href="<?php the_permalink(); ?>" tabindex="-1" aria-hidden="true" class="block w-full h-full no-underline curated-post-link">
+						<?php
+						the_post_thumbnail(
+							array( 327, 184 ),
+							array(
+								'class' => 'rounded-xs shadow-xs w-full h-full object-cover bg-white',
+							)
+						);
+						?>
+					</a>
 				</div>
-				<h1 class="!text-2xl !leading-normal !mt-5 tracking-tighter">
-					<a href="<?php the_permalink(); ?>" id="post-<?php the_ID(); ?>" class="curated-post-link"><?php the_title(); ?></a>
-				</h1>	
+			<?php endif; ?>
+
+				<h2 class="!text-xl !leading-tight tracking-tight font-bold" id="post-<?php the_ID(); ?>">
+					<a href="<?php the_permalink(); ?>" class="curated-post-link">
+						<?php the_title(); ?>
+					</a>
+				</h2>   
 			</header>
-			<div class="excerpt">
-				<?php if ( function_exists( 'get_field' ) && get_field( 'ecpt_tagline' ) ) : ?>
-					<p><?php the_field( 'ecpt_tagline' ); ?></p>
-				<?php else : ?>
-					<?php the_excerpt(); ?>
-				<?php endif; ?>
+
+			<div class="mt-3 text-sm leading-relaxed excerpt">
+				<?php
+				$tagline = get_field( 'ecpt_tagline' );
+				if ( $tagline ) :
+					echo esc_html( $tagline );
+				else :
+					// Using get_the_excerpt to allow for cleaner escaping.
+					echo esc_html( wp_trim_words( get_the_excerpt(), 25 ) );
+				endif;
+				?>
 			</div>
 		</div>
 	</div>

@@ -32,12 +32,14 @@ if ( $tags ) :
 			);
 		?>
 			<?php
-			if ( $related_posts_query->have_posts() ) : ?>	
-<div class="bg-opacity-50 related-posts-container alignfull bg-grey-cool">
+			if ( $related_posts_query->have_posts() ) :
+				?>
+			<div class="bg-opacity-50 related-posts-container alignfull bg-grey-cool">
 	<div class="container mx-auto">
 	<h2 class="py-4 text-3xl font-bold font-heavy">Related <?php echo $catname; ?> Stories</h3>
 	<div class="grid grid-cols-2 gap-8 lg:grid-cols-4">
-				<?php while ( $related_posts_query->have_posts() ) :
+				<?php
+				while ( $related_posts_query->have_posts() ) :
 					$related_posts_query->the_post();
 					$issues = get_the_terms( $post->ID, 'volume' );
 					if ( $issues && ! is_wp_error( $issues ) ) :
@@ -52,7 +54,7 @@ if ( $tags ) :
 				<div class="flex justify-end text-base font-bold tracking-wider uppercase font-heavy">
 					<span><?php echo $issue->name; ?></span>
 				</div>
-				<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
+					<?php if ( has_post_thumbnail( $post->ID ) ) : ?>
 					<div class="h-60">
 						<?php the_post_thumbnail( 'related-posts', array( 'class' => 'h-60 w-full object-cover object-top' ) ); ?>
 					</div>
@@ -70,11 +72,12 @@ if ( $tags ) :
 					?>
 				</p>
 			</div>
-		<?php endwhile;?>
+		<?php endwhile; ?>
 	</div>
 </div>
 </div>
-<?php endif;
+				<?php
+endif;
 			wp_reset_postdata();
 			?>
 <?php endif; ?>
