@@ -25,6 +25,13 @@
 	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
 	})(window,document,'script','dataLayer','GTM-T9S2PC4');</script>
 	<!-- End Google Tag Manager -->
+	<?php
+	if ( get_field( 'siteimprove', 'option' ) ) :
+		?>
+	<!-- Siteimprove Analytics -->
+	<script async src="https://siteimproveanalytics.com/js/siteanalyze_11464.js"></script>
+	<!-- End Siteimprove Analytics -->
+		<?php endif; ?>
 </head>
 
 <body <?php body_class(); ?>>
